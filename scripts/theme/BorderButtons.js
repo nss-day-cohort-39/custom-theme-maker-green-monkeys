@@ -1,14 +1,14 @@
-const eventHub = document.querySelector(".container")
-const contentTarget = document.querySelector(".themes")
+const eventHub = document.querySelector("#container")
+
 
 // Listen for browser generated click event in this component
-contentTarget.addEventListener("click", clickEvent => {
+eventHub.addEventListener("click", clickEvent => {
 
     // Make sure it was one of the color buttons
-    if (clickEvent.target.id.startsWith("pixelsize")) {
+    if (clickEvent.target.name === "pixelsize") {
 
         // Get the chosen color
-        const [chosenPixel] = clickEvent.target.id.split("--")
+        const chosenPixel = clickEvent.target.value
 
         /*
             Create a new custom event, with a good name, and
@@ -20,7 +20,6 @@ contentTarget.addEventListener("click", clickEvent => {
                 pixel: chosenPixel
             }
         })
-
         eventHub.dispatchEvent(pixelChosenEvent)
     }
 })
