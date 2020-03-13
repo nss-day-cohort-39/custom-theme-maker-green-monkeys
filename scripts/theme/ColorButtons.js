@@ -14,9 +14,9 @@ eventHub.addEventListener("click", clickEvent => {
             add a property to the `detail` object that specifies
             which color was chosen
         */
-        const fontChosenEvent = new CustomEvent("colorChosen", {
+        const colorChosenEvent = new CustomEvent("colorChosen", {
             detail: {
-                fontSize: chosenColor
+                color: chosenColor
             }
         })
 
