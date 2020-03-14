@@ -17,24 +17,13 @@ const render = newsCollection => {
 }
 
 eventHub.addEventListener("fontChosen", event => {
+    
     const font = event.detail.fontSize
 
     const contentTarget = document.querySelector('.news')
 
-    if (contentTarget.classList.contains("xsmall")) {
-       contentTarget.classList.remove("xsmall")
-    }
-    else if (contentTarget.classList.contains("small")){
-        contentTarget.classList.remove("small")
-    }
-    else if (contentTarget.classList.contains("large")){
-        contentTarget.classList.remove("large")
-    }
-    else if (contentTarget.classList.contains("xlarge")){
-        contentTarget.classList.remove("xlarge")
-    }
+    contentTarget.classList.remove('xsmall', 'small', 'large', 'xlarge')
 
-    // contentTarget.classList = []
     contentTarget.classList.add(font)
 })
 
@@ -44,38 +33,20 @@ eventHub.addEventListener("colorChosen", event => {
 
     const contentTarget = document.querySelector(".news")
 
-    if (contentTarget.classList.contains("blue")) {
-        contentTarget.classList.remove("blue")
-     }
-     else if (contentTarget.classList.contains("green")){
-         contentTarget.classList.remove("green")
-     }
-     else if (contentTarget.classList.contains("purple")){
-         contentTarget.classList.remove("purple")
-     }
-     else if (contentTarget.classList.contains("red")){
-         contentTarget.classList.remove("red")
-     }
+    contentTarget.classList.remove('blue', 'green', 'red', 'purple')
 
-    // contentTarget.classList = []
     contentTarget.classList.add(color)
 
 })
 
 eventHub.addEventListener("pixelChosen", event => {
+
     const score = event.detail.pixel
-    
+
     const contentTarget = document.querySelector('.news')
 
-    if (contentTarget.classList.contains("onepixel")) {
-        contentTarget.classList.remove("onepixel")
-     }
-     else if (contentTarget.classList.contains("threepixels")){
-         contentTarget.classList.remove("threepixels")
-     }
-     else if (contentTarget.classList.contains("fivepixels")){
-         contentTarget.classList.remove("fivepixels")
-     }
-    // contentTarget.classList = []
+    contentTarget.classList.remove('onepixel', 'threepixels', 'fivepixels')
+
     contentTarget.classList.add(score)
-    })
+
+})
