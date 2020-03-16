@@ -4,10 +4,10 @@ import { BorderButtons } from "./BorderButtons.js"
 
 export const ThemeOptions = () => {
     return `
-        <article class="container__panel themeOptions">
-            ${BorderButtons()}
-            ${ColorButtons()}
-            ${FontButtons()}
+    <article class="container__panel themeOptions">
+      ${BorderButtons()}
+      ${ColorButtons()}
+      ${FontButtons()}
         </article>
     `
 }

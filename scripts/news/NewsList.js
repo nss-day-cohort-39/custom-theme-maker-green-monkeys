@@ -2,7 +2,7 @@ import { useNews } from "./NewsProvider.js"
 import { NewsItem } from "./NewsItem.js"
 
 const eventHub = document.querySelector("#container")
-
+let childrenVisible = true
 export const NewsList = () => {
     const newsItems = useNews()
     return render(newsItems)
@@ -50,3 +50,4 @@ eventHub.addEventListener("pixelChosen", event => {
     contentTarget.classList.add(score)
 
 })
+
