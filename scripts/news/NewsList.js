@@ -2,6 +2,7 @@ import { useNews } from "./NewsProvider.js"
 import { NewsItem } from "./NewsItem.js"
 
 const eventHub = document.querySelector("#container")
+let childrenVisible = true
 
 export const NewsList = () => {
     const newsItems = useNews()
@@ -50,3 +51,15 @@ eventHub.addEventListener("pixelChosen", event => {
     contentTarget.classList.add(score)
 
 })
+
+eventHub.addEventListener("visibilityToggled", eevent => {
+    if(event.detail.chosenComponent === "news"){
+         const allNewsItems = document.querySelectorAll(".newsItem")
+         childrenVisible = !childrenVisible
+ 
+         allNewsItems.forEach(item => childrenVisible
+             ? item.classList.remove("invisible")
+             : item.classList.add("invisible")
+         )
+     }
+ })
